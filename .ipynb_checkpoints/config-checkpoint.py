@@ -6,13 +6,19 @@ import os
 path_save_INITfolder = r'C:\Users\camil\OneDrive\Desktop\G1\outputAnalysis'
 
 #### Unique naming of the run, so that all associated saved output gets into a specific folder. typically using after changing the code.
-runname = 'N3000_debugingFalse_withdecayrate' 
+#runname = 'RandomSampling26April' #DEBUG
+#runname = 'RandomSamplingMaiV9' #ANALYSIS
+#runname = 'PathwaysV2' #ANALYSIS
+runname = 'RandomSamplingHPAIprimed' #ANALYSIS
 
 path_save_data = os.path.join(path_save_INITfolder, runname)
 os.makedirs(path_save_data, exist_ok=True)  # Creates directory only if it doesn't exist
 
 #### Choose network folder
-path_save_networkspace = os.path.join(path_save_INITfolder, 'NetworkSpace', 'NetworkSpaceJuly') #folder with network space do be created specifically for a purpose
+#path_save_networkspace = os.path.join(path_save_INITfolder, 'NetworkSpace', 'NetworkSpace4debug2') #DEBUG
+#path_save_networkspace = os.path.join(path_save_INITfolder, 'NetworkSpace', 'NetworkSpaceMai') #ANALYSIS
+path_save_networkspace = os.path.join(path_save_INITfolder, 'NetworkSpace', 'NetworkSpaceJuly') #ANALYSIS
+
 
 
 ###############################################################
@@ -21,6 +27,7 @@ path_save_networkspace = os.path.join(path_save_INITfolder, 'NetworkSpace', 'Net
 
 ######## features
 dico_var_color = {
+    #'base_transmission_rate': 'firebrick',
     'decayrate':'firebrick',
     'days_resistant':'firebrick',
     'days_exposed': 'firebrick',
@@ -85,7 +92,8 @@ dico_col_gr = {'firebrick':'virus',
                  'khaki':'waterfowl',
                  'silver':'poultry'}
 
-dico_var_name = {'decayrate':'decay rate',
+dico_var_name = {#'base_transmission_rate': 'Base transmission rate',
+                 'decayrate':'decay rate',
                 'days_resistant':'Post-infection immunity duration',
                 'days_exposed': 'Latent period',
                 'days_incubation': 'Incubation period',
